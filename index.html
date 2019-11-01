@@ -1,0 +1,90 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Krupto App</title>
+ <link rel="stylesheet" href="styles.css">
+ <script type="text/javascript" src="backend.js"></script>
+ 
+</head>
+<body>
+<img src="logotransparent.png" width="750" height="500">
+ <button class="button1" id="myBtn">Rakenduse Kirjeldus</button>
+ <br>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Rakenduse kirjeldus, kuidas rakendust kasutama peab</h2>
+    <h4>OTP-Encrypt/Decrypt</h4>
+    <p>Tarvilik sisestada mingisugune sõnum, mida soovid siis krüpteerida. Ilma täpitähtedeta. Oletame, et sõnumi pikkus on 20 karakterit, siis peab olema ka võtme pikkus 20karakterit ning pärast seda tuleb vajutada nuppu OTP-Encrypt. Mis tagastab siis järgmises väljas krüpteeritud sõnumi. Kui inimene tahab dekrüpteerida sõnumit, on tal selleks vaja krüpteeritud sõnumit ja krüpteerimiseks kasutatud salavõtit. Tuleb sisestada siis krüpteeritud sõnum esimesse lahtrisse ja vajutada nupule decrypt. Tulemus ilmub alumisse kasti. Sooritage kerge näide: Krüpteeritav tekst: TERE. Salasõnaks pange: AWED. Krüpteeritud tekst: TAVH. Nüüd sisestage TAVH, esimesse lahtrisse ning jätke võti samaks ja vajutage nuppu OTP-decrypt ja saame algse teksti.<p>
+    <h4>SHA-2</h4>
+    <p>See on SHA-2 krüpteerimise meetod, mis siis tagastab sellise räsi rea, mida tänaseks päevaks on võimalik bruteforciga lahti murda mis ei ole enam turvaline kasutamiseks. Kuid testimise eesmärgil võib alati kasutada.</p>
+    <h4>MD5 Decrypt</h4>
+    <p>ENDISELT ARENDUSPROTSESSIS, HETKESEISUGA EI TÖÖTA</p>
+    <h2>Tallinna Tehnikaülikool</h2>
+    <p>Tahad õppida kõike seda koodima? Luua uusi rakendusi? Olla suurtele firmadele võimalikult kasulik või luua üldse oma firma? tule õpi meie juures Tallinna Tehnikaülikoolis, selleks, et tutvuda ülikooliga,<a href="https://www.ttu.ee/">VAJUTA SIIA</a></p>
+  </div>
+</div>
+<form >
+ <center>
+  <textarea id="sisend1" class="textarea" name="Sisend" placeholder="Sisend, sisesta siia oma tekst" rows="4" cols="50"></textarea> 
+<br>
+<br>
+<textarea id="voti1" class="textarea" name="Voti" placeholder="Krypteerimis voti" rows="1" cols="50"></textarea>
+<br>
+<br>
+<button class="button" onclick="encrypt()" type="button">OTP-Encrypt</button>
+<button class="button" onclick="decrypt()" type="button">OTP-Decrypt</button>
+<button class="button" onclick="Sha2()" type="button">SHA-2</button>
+<button class="button" onclick="md5()" type="button">MD5 Decrypt</button>
+<br>
+<br>
+<textarea id="valjund1" class="textarea" name="Valjund" placeholder="Valjund tulemus"  rows="4" cols="50"></textarea>
+<h3 style="color: white;">Examples</h3>>
+<table>
+  <tr>
+    <th>OTP-Encrypt</th>
+    <th>Secret Key</th>
+    <th>OTP-Decrypty</th>
+  </tr>
+  <tr>
+    <td>Tere</td>
+    <td>wrss</td>
+    <td>pvjw</td>
+  </tr>
+  <tr>
+    <td>minaolenrasmus</td>
+    <td>qwertyuiopasdf</td>
+    <td>cerrhjyvfpsexx</td>
+  </tr>
+  <tr>
+    <td>varastasinpanka</td>
+    <td>tghmnbvdrkijghy</td>
+    <td>ogymfuvvzxxjtry</td>
+  </tr>
+  <tr>
+    <td>jainpolitseilevahele</td>
+    <td>qwertyuioplkjhgfdsaz</td>
+    <td>zwmeimfqhhpsulbfkwld</td>
+  </tr>
+</table>
+<p class="copyright">&copy; 2019 Rasmus Rugam 166056IAIB - TalTech<p>
+<script>
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</form> 
+
+</body>
+</html> 
